@@ -4,6 +4,7 @@ import { Head } from './components/head/head';
 
 import globalStyles from './global.css?inline';
 import { useI18n } from './utils/i18n';
+import HeaderCarousel from './components/HeaderCarousel/HeaderCarousel';
 
 export default component$(() => {
 	/**
@@ -19,6 +20,7 @@ export default component$(() => {
 		<QwikRouterProvider>
 			<Head />
 			<body lang="en">
+				<HeaderCarousel />
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>

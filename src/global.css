@@ -10,4 +10,44 @@
 	.input-text {
 		@apply appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400;
 	}
+
+	.secondary {
+		@apply w-full  flex items-center justify-center text-base bg-orange-500 text-white;
+	}
+}
+@layer qwik-ui {
+	[data-qui-carousel-viewport] {
+		overflow: hidden;
+	}
+
+	[data-qui-carousel-scroller] {
+		transform: var(--transform);
+		will-change: transform;
+		transition: 0.7s transform ease;
+
+		display: flex;
+		gap: var(--gap);
+		flex-direction: var(--orientation);
+
+		/* for initial slide position */
+		scroll-snap-type: both mandatory;
+		max-height: calc(var(--max-slide-height));
+	}
+
+	[data-qui-carousel-slide] {
+		/* default, feel free to override */
+		--total-gap-width: calc(var(--gap) * (var(--slides-per-view) - 1));
+		--available-slide-width: calc(100% - var(--total-gap-width));
+		--slide-width: calc(var(--available-slide-width) / var(--slides-per-view));
+
+		flex-basis: var(--slide-width);
+		flex-shrink: 0;
+		position: relative;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		[data-qui-carousel-player] {
+			display: none;
+		}
+	}
 }
