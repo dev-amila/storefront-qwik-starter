@@ -14,11 +14,11 @@ export default component$(() => {
 	return (
 		<div>
 			{appState.showCart && (
-				<div class="fixed inset-0 overflow-hidden transition  duration-1000 z-50">
+				<div class="fixed inset-0 overflow-hidden z-20">
 					<div class="absolute inset-0 overflow-hidden">
-						<div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity ease-in-out opacity-100 duration-1000 "></div>
-						<div class="fixed inset-y-0 right-0 duration-500 pl-10 max-w-full flex">
-							<div class="w-screen max-w-md   translate-x-0">
+						<div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity opacity-100"></div>
+						<div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+							<div class="w-screen max-w-md translate-x-0 ">
 								<div class="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
 									<div class="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
 										<div class="flex items-start justify-between">
