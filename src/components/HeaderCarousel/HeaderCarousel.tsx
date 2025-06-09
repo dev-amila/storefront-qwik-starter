@@ -1,8 +1,8 @@
-import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import { Carousel } from '@qwik-ui/headless';
 
 export default component$(() => {
-	useStyles$(styles);
+	// useStyles$(styles);
 
 	const isAutoplaySig = useSignal(false);
 
@@ -10,7 +10,14 @@ export default component$(() => {
 		isAutoplaySig.value = true;
 	});
 
-	const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
+	// const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
+	const promoMessages = [
+		{ id: 1, message: 'Free Shipping On Orders Over 5000 LKR' },
+		{ id: 2, message: 'Shop More, Save More: Free Shipping Over $100!' },
+		{ id: 3, message: 'Buy One, Get One 50% Off!' },
+		{ id: 4, message: 'Limited Edition Release – Shop Now!' },
+		{ id: 5, message: 'Holiday Sale – Up to 60% Off!' },
+	];
 
 	return (
 		<>
@@ -19,12 +26,12 @@ export default component$(() => {
 				gap={0}
 				autoPlayIntervalMs={2500}
 				bind:autoplay={isAutoplaySig}
+				rewind={true}
 			>
 				<Carousel.Scroller class="carousel-scroller">
-					{colors.map((color, index) => (
-						<Carousel.Slide key={color} class="carousel-slide secondary">
-							{color}
-							<div>{index === 1 && <button>I stop autoplay on focus!</button>}</div>
+					{promoMessages.map((promo) => (
+						<Carousel.Slide key={promo.id} class="carousel-slide secondary">
+							{promo.message}
 						</Carousel.Slide>
 					))}
 				</Carousel.Scroller>
@@ -33,4 +40,4 @@ export default component$(() => {
 	);
 });
 // internal
-import styles from './carousel.css?inline';
+// import styles from './carousel.css?inline';

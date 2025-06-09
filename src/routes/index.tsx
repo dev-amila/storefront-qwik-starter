@@ -1,13 +1,27 @@
 import { component$, useContext } from '@qwik.dev/core';
-import { Image } from 'qwik-image';
+// import { Image } from 'qwik-image';
+import HeroSwiper from '~/components/hero-swiper/HeroSwiper';
+import { APP_STATE } from '~/constants';
+
+import CollectionSlider from '~/components/collection-slider/CollectionSlider';
+import AdBanners from '~/components/ad-banners/AdBanners';
 import CollectionCard from '~/components/collection-card/CollectionCard';
-import { APP_STATE, HOMEPAGE_IMAGE } from '~/constants';
+import CollectionSliderQui from '~/components/collection-slider-qui/CollectionSliderQui';
 
 export default component$(() => {
 	const collections = useContext(APP_STATE).collections;
+
+	const promoMessages = [
+		{ id: 1, message: 'Free Shipping On Orders Over 5000 LKR' },
+		{ id: 2, message: 'Shop More, Save More: Free Shipping Over $100!' },
+		{ id: 3, message: 'Buy One, Get One 50% Off!' },
+		{ id: 4, message: 'Limited Edition Release – Shop Now!' },
+		{ id: 5, message: 'Holiday Sale – Up to 60% Off!' },
+	];
+
 	return (
 		<div>
-			<div class="relative h-[600px]">
+			{/* <div class="relative h-[600px]">
 				<div class="absolute inset-0 overflow-hidden">
 					<Image
 						layout="fullWidth"
@@ -46,7 +60,11 @@ export default component$(() => {
 						</a>
 					</p>
 				</div>
-			</div>
+			</div> */}
+
+			{/* <Hero /> */}
+			{/* <HeroEmbla /> */}
+			<HeroSwiper />
 
 			<section class="pt-12 xl:max-w-7xl xl:mx-auto xl:px-8">
 				<div class="mt-4 flow-root">
@@ -55,12 +73,43 @@ export default component$(() => {
 							<div class="sm:px-6 lg:px-8 xl:px-0 pb-4">
 								<h2 class="text-2xl font-light tracking-tight text-gray-900">{$localize`Shop by Category`}</h2>
 							</div>
-							<div class="grid justify-items-center grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:gap-x-8">
-								{collections.map((collection) =>
+							{/* <div class="grid w-full justify-items-center grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:gap-x-8"> */}
+							{/* <div class="swiper" ref={swiperRef}>
+									<div class="swiper-wrapper ">
+										{collections.map((collection) =>
+											collection.featuredAsset ? (
+												<div key={collection.id} class="swiper-slide">
+													<CollectionCard collection={collection} />
+												</div>
+											) : null
+										)}
+									</div>
+								</div> */}
+							{/* <div class=""> */}
+							{/* {collections.map((collection ) =>
+									// <div  key={collection.id} class="w-full flex justify-center items-center">
+									// 	<h1>{collection.message}</h1>
+									// </div>
 									collection.featuredAsset ? (
 										<CollectionCard key={collection.id} collection={collection} />
-									) : null
-								)}
+									) : // <div key={collection.id}>{collection.name}</div>
+									null
+								)} */}
+							{/* </div>  */}
+							{/* <div class='w-full '>
+								<p>fdjfldjfldsfjdlskjfsd fjdskljflkdsjf sdfkjfkldsjflkdjflkdjf jlkjkfjdfdlflhgdfjd ddsjflkdsjfldhfahf </p>
+							</div>
+							<div class='w-full '>
+								<p>fdjfldjfldsfjdlskjfsd fjdskljflkdsjf sdfkjfkldsjflkdjflkdjf jlkjkfjdfdlflhgdfjd ddsjflkdsjfldhfahf </p>
+							</div>
+							<div class='w-full '>
+								<p>fdjfldjfldsfjdlskjfsd fjdskljflkdsjf sdfkjfkldsjflkdjflkdjf jlkjkfjdfdlflhgdfjd ddsjflkdsjfldhfahf </p>
+							</div>
+							// </div> */}
+							<div class="w-full">
+								{/* <CollectionSlider collections={collections} /> */}
+								<CollectionSliderQui />
+								<AdBanners />
 							</div>
 						</div>
 					</div>

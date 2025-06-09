@@ -1,16 +1,18 @@
-import { $, component$, useContext, useVisibleTask$ } from '@qwik.dev/core';
+import { $, component$, useContext, useVisibleTask$, useSignal } from '@qwik.dev/core';
 import { APP_STATE, CUSTOMER_NOT_DEFINED_ID } from '~/constants';
 import { logoutMutation } from '~/providers/shop/account/account';
 import { getActiveCustomerQuery } from '~/providers/shop/customer/customer';
-import { GitHubLink } from '../GitHubLink/GitHubLink';
 import LogoutIcon from '../icons/LogoutIcon';
 import MenuIcon from '../icons/MenuIcon';
 import ShoppingBagIcon from '../icons/ShoppingBagIcon';
 import UserIcon from '../icons/UserIcon';
 import SearchBar from '../search-bar/SearchBar';
+import { Image } from 'qwik-image';
 
 export default component$(() => {
 	const appState = useContext(APP_STATE);
+	const isOpen = useSignal(false);
+	const dropdownRef = useSignal<HTMLElement>();
 	const collections = useContext(APP_STATE).collections.filter(
 		(item) => item.parent?.name === '__root_collection__' && !!item.featuredAsset
 	);
@@ -36,6 +38,19 @@ export default component$(() => {
 		}
 	});
 
+	useVisibleTask$(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
+				isOpen.value = false;
+			}
+		};
+
+		document.addEventListener('click', handleClickOutside);
+		return () => {
+			document.removeEventListener('click', handleClickOutside);
+		};
+	});
+
 	const logout = $(async () => {
 		await logoutMutation();
 		// force hard refresh
@@ -47,20 +62,13 @@ export default component$(() => {
 			class={`bg-gradient-to-r from-blue-700 to-indigo-900 transform shadow-xl sticky top-0 z-10 animate-dropIn`}
 		>
 			<header>
-				<div class="bg-zinc-100 text-gray-600 shadow-inner text-center text-sm py-1 px-2 xl:px-0">
+				<div class="bg-zinc-100 text-gray-600 py-3 shadow-inner text-center text-sm   xl:px-0">
 					<div class="max-w-6xl mx-2 h-5 min-h-full md:mx-auto flex items-center justify-between my-1">
 						<div class="flex justify-between items-center w-full">
-							<div>
-								<p class="hidden sm:block">
-									{$localize`Exclusive: Get your own`}{' '}
-									<a
-										href="https://github.com/vendure-ecommerce/storefront-qwik-starter"
-										target="_blank"
-										class="underline"
-									>
-										{$localize`FREE storefront starter kit`}
-									</a>
-								</p>
+							<div class=" ">
+								<a href="/" class="text-gray-400 hover:text-gray-500">
+									<Image layout="constrained" width="150" height="150" src="/logo.svg" alt="Logo" />
+								</a>
 							</div>
 							<div class="flex mr-[60px] 2xl:mr-0">
 								<a
@@ -86,7 +94,7 @@ export default component$(() => {
 						</div>
 					</div>
 				</div>
-				<div class="max-w-6xl mx-auto p-4 flex items-center space-x-4">
+				<div class="max-w-6xl mx-auto py-4 flex items-center justify-between sm:gap-4 ">
 					<button
 						class="block sm:hidden text-white"
 						onClick$={() => (appState.showMenu = !appState.showMenu)}
@@ -94,12 +102,13 @@ export default component$(() => {
 						<span class="sr-only">Menu</span>
 						<MenuIcon />
 					</button>
-					<h1 class="text-white w-10">
+					{/* <h1 class="text-white w-10">
+
 						<a href="/">
 							<img src={`/cube-logo-small.webp`} width={40} height={31} alt="Vendure logo" />
 						</a>
-					</h1>
-					<div class="hidden space-x-4 sm:block">
+					</h1> */}
+					{/* <div class="hidden space-x-4 sm:block">
 						{collections.map((collection) => (
 							<a
 								class="text-sm md:text-base text-gray-200 hover:text-white"
@@ -109,8 +118,62 @@ export default component$(() => {
 								{collection.name}
 							</a>
 						))}
+					</div> */}
+					<div class="relative  inline-block text-left">
+						<div class="flex items-center justify-center " ref={dropdownRef}>
+							<div class="relative inline-block">
+								<button
+									onClick$={() => (isOpen.value = !isOpen.value)}
+									class="inline-flex group gap-3 justify-center w-full  shadow-sm pr-4 py-2 text-sm  text-white group-hover:text-orange-500"
+								>
+									<svg
+										class="w-5 h-5 "
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										viewBox="0 0 24 24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M3.75 5.25h16.5m-16.5 6.75h16.5m-16.5 6.75h16.5"
+										/>
+									</svg>
+									All Categories
+								</button>
+							</div>
+							<a href="/shop" class="text-white text-sm">
+								Shop
+							</a>
+
+							{isOpen.value && (
+								<div class="absolute left-0 top-[100%] mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+									<div class="py-1">
+										{collections.map((collection) => (
+											<a
+												class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												href={`/collections/${collection.slug}`}
+												key={collection.id}
+											>
+												{collection.name}
+											</a>
+										))}
+										{/* <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+										Account settings
+									</a>
+									<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+										Support
+									</a>
+									<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+										Sign out
+									</a> */}
+									</div>
+								</div>
+							)}
+						</div>
 					</div>
-					<div class="flex-1 block md:pr-8">
+					<div class="flex-1  md:pr-8">
 						<SearchBar />
 					</div>
 					<div class="">
@@ -131,7 +194,6 @@ export default component$(() => {
 						</button>
 					</div>
 				</div>
-				<GitHubLink />
 			</header>
 		</div>
 	);
