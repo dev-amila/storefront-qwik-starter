@@ -60,6 +60,9 @@ export default component$(() => {
 			? await searchQueryWithTerm(params.slug, '', state.facetValueIds)
 			: await searchQueryWithCollectionSlug(params.slug);
 		state.facedValues = groupFacetValues(state.search as SearchResponse, state.facetValueIds);
+		// console.log('item in stock ', state.search.items[2].inStock );
+		// console.log('collection ', state.search );
+		console.log('search result with all ', state);
 	});
 
 	const onFilterChange = $(async (id: string) => {
@@ -78,6 +81,10 @@ export default component$(() => {
 			: await searchQueryWithCollectionSlug(params.slug);
 	});
 
+	let subcollectioncount = 1;
+	if (collectionSignal.value.children?.length) {
+		subcollectioncount = collectionSignal.value.children.length - 1;
+	}
 	const onOpenCloseFilter = $((id: string) => {
 		state.facedValues = state.facedValues.map((f) => {
 			if (f.id === id) {
@@ -86,6 +93,8 @@ export default component$(() => {
 			return f;
 		});
 	});
+
+	// console.log('collection Signal', collectionSignal.value.children);
 
 	return (
 		<div
@@ -139,6 +148,11 @@ export default component$(() => {
 					<div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 						{state.search.items.map((item) => (
 							<ProductCard
+								collection={
+									collectionSignal.value.children?.length === 0
+										? collectionSignal.value.name
+										: collectionSignal.value.children?.[subcollectioncount]?.name
+								}
 								key={item.productId}
 								productAsset={item.productAsset}
 								productName={item.productName}

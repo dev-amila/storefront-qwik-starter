@@ -50,6 +50,7 @@ export default component$(() => {
 		});
 		return result;
 	});
+	// console.log("this is the details of product",productSignal);
 
 	return (
 		<div>
@@ -181,6 +182,10 @@ export default component$(() => {
 										<HeartIcon />
 										<span class="sr-only">{$localize`Add to favorites`}</span>
 									</button>
+									{/* {
+										selectedVariantSignal.value?.stockLevel > 0 && (
+									} */}
+									{/* <span >Aval{selectedVariantSignal.value?.}</span> */}
 								</div>
 							</div>
 							<div class="mt-2 flex items-center space-x-2">

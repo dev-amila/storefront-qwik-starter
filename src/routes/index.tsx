@@ -1,23 +1,17 @@
-import { component$, useContext } from '@qwik.dev/core';
+import { component$ } from '@qwik.dev/core';
 // import { Image } from 'qwik-image';
 import HeroSwiper from '~/components/hero-swiper/HeroSwiper';
-import { APP_STATE } from '~/constants';
+// import { APP_STATE } from '~/constants';
 
-import CollectionSlider from '~/components/collection-slider/CollectionSlider';
+// import CollectionSlider from '~/components/collection-slider/CollectionSlider';
 import AdBanners from '~/components/ad-banners/AdBanners';
-import CollectionCard from '~/components/collection-card/CollectionCard';
+// import CollectionCard from '~/components/collection-card/CollectionCard';
 import CollectionSliderQui from '~/components/collection-slider-qui/CollectionSliderQui';
+import RecommendedProducts from '~/components/recommended-products/RecommendedProducts';
+// import BrandCarousel from '~/components/brand-carousel/BrandCarousel';
 
 export default component$(() => {
-	const collections = useContext(APP_STATE).collections;
-
-	const promoMessages = [
-		{ id: 1, message: 'Free Shipping On Orders Over 5000 LKR' },
-		{ id: 2, message: 'Shop More, Save More: Free Shipping Over $100!' },
-		{ id: 3, message: 'Buy One, Get One 50% Off!' },
-		{ id: 4, message: 'Limited Edition Release – Shop Now!' },
-		{ id: 5, message: 'Holiday Sale – Up to 60% Off!' },
-	];
+	// const collections = useContext(APP_STATE).collections;
 
 	return (
 		<div>
@@ -110,6 +104,8 @@ export default component$(() => {
 								{/* <CollectionSlider collections={collections} /> */}
 								<CollectionSliderQui />
 								<AdBanners />
+								<RecommendedProducts />
+								{/* <BrandCarousel /> */}
 							</div>
 						</div>
 					</div>

@@ -8,6 +8,7 @@ import ShoppingBagIcon from '../icons/ShoppingBagIcon';
 import UserIcon from '../icons/UserIcon';
 import SearchBar from '../search-bar/SearchBar';
 import { Image } from 'qwik-image';
+// import HeaderBanner from '../header-banner/HeaderBanner';
 
 export default component$(() => {
 	const appState = useContext(APP_STATE);
@@ -61,6 +62,7 @@ export default component$(() => {
 		<div
 			class={`bg-gradient-to-r from-blue-700 to-indigo-900 transform shadow-xl sticky top-0 z-10 animate-dropIn`}
 		>
+			{/* <HeaderBanner /> */}
 			<header>
 				<div class="bg-zinc-100 text-gray-600 py-3 shadow-inner text-center text-sm   xl:px-0">
 					<div class="max-w-6xl mx-2 h-5 min-h-full md:mx-auto flex items-center justify-between my-1">
@@ -120,7 +122,7 @@ export default component$(() => {
 						))}
 					</div> */}
 					<div class="relative  inline-block text-left">
-						<div class="flex items-center justify-center " ref={dropdownRef}>
+						<div class=" hidden sm:flex items-center justify-center " ref={dropdownRef}>
 							<div class="relative inline-block">
 								<button
 									onClick$={() => (isOpen.value = !isOpen.value)}

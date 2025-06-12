@@ -6,6 +6,7 @@ import globalStyles from './global.css?inline';
 import { useI18n } from './utils/i18n';
 // import HeaderCarousel from './components/HeaderCarousel/HeaderCarousel';
 import HeaderBanner from './components/header-banner/HeaderBanner';
+// import CollectionSlider from './components/collection-slider/CollectionSlider';
 
 export default component$(() => {
 	/**
@@ -21,6 +22,7 @@ export default component$(() => {
 		<QwikRouterProvider>
 			<Head />
 			<body lang="en">
+				{/* <CollectionSlider  /> */}
 				{/* <HeaderCarousel /> */}
 				<HeaderBanner />
 				<RouterOutlet />
