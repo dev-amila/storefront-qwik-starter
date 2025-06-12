@@ -13,21 +13,48 @@ importers:
       '@graphql-codegen/typescript-generic-sdk':
         specifier: ^4.0.1
         version: 4.0.1(graphql-tag@2.12.6(graphql@16.10.0))(graphql@16.10.0)
+      '@qwikest/icons':
+        specifier: ^0.0.13
+        version: 0.0.13(@builder.io/qwik@1.14.1(vite@5.4.6(@types/node@20.11.17)))
       '@stripe/stripe-js':
         specifier: ^3.0.0
         version: 3.5.0
+      aos:
+        specifier: ^2.3.4
+        version: 2.3.4
       braintree-web-drop-in:
         specifier: ^1.42.0
         version: 1.43.0
+      embla-carousel:
+        specifier: ^8.6.0
+        version: 8.6.0
+      embla-carousel-autoplay:
+        specifier: ^8.6.0
+        version: 8.6.0(embla-carousel@8.6.0)
       graphql:
         specifier: ^16.8.1
         version: 16.10.0
       graphql-tag:
         specifier: ^2.12.6
         version: 2.12.6(graphql@16.10.0)
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
+      lucide:
+        specifier: ^0.513.0
+        version: 0.513.0
+      lucide-qwik:
+        specifier: ^1.0.0
+        version: 1.0.0
+      lucide-static:
+        specifier: ^0.511.0
+        version: 0.511.0
       qwik-image:
         specifier: 0.0.16
         version: 0.0.16
+      swiper:
+        specifier: ^11.2.8
+        version: 11.2.8
       zod:
         specifier: ^3.22.4
         version: 3.24.1
@@ -38,6 +65,9 @@ importers:
       '@angular/compiler-cli':
         specifier: ^17.1.3
         version: 17.3.12(@angular/compiler@17.3.12)(typescript@5.3.3)
+      '@builder.io/qwik':
+        specifier: ^1.14.1
+        version: 1.14.1(vite@5.4.6(@types/node@20.11.17))
       '@graphql-codegen/cli':
         specifier: ^5.0.2
         version: 5.0.3(@types/node@20.11.17)(graphql@16.10.0)(typescript@5.3.3)
@@ -50,6 +80,9 @@ importers:
       '@graphql-codegen/typescript-operations':
         specifier: ^4.1.2
         version: 4.4.0(graphql@16.10.0)
+      '@qwik-ui/headless':
+        specifier: ^0.6.7
+        version: 0.6.8(@builder.io/qwik@1.14.1(vite@5.4.6(@types/node@20.11.17)))
       '@qwik.dev/core':
         specifier: 2.0.0-alpha.10
         version: 2.0.0-alpha.10(prettier@3.2.5)(vite@5.4.6(@types/node@20.11.17))
@@ -59,6 +92,9 @@ importers:
       '@tailwindcss/forms':
         specifier: ^0.5.7
         version: 0.5.9(tailwindcss@3.4.1)
+      '@types/aos':
+        specifier: ^3.0.7
+        version: 3.0.7
       '@types/braintree-web-drop-in':
         specifier: ^1.39.3
         version: 1.39.3
@@ -80,6 +116,9 @@ importers:
       concurrently:
         specifier: 8.2.2
         version: 8.2.2
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -663,6 +702,16 @@ packages:
         integrity: sha512-UIrJB+AfKU0CCfbMoWrsGpd2D/hBpY/SGgFI6WRHPOwhaZ3g9rz1weiJ6eb6L9KgVyunT7s2tckcPkbHw+NzeA==,
       }
 
+  '@builder.io/qwik@1.14.1':
+    resolution:
+      {
+        integrity: sha512-bq1fkt8RhjkENQOs/bxh8i1IuQ0DIfIZ1RgyoZYmADxcyKjhVRcCx+6kaRUkjovb5sR06pqH96YaHjI7iI/CMw==,
+      }
+    engines: { node: '>=16.8.0 <18.0.0 || >=18.11' }
+    hasBin: true
+    peerDependencies:
+      vite: ^5
+
   '@cloudflare/kv-asset-handler@0.2.0':
     resolution:
       {
@@ -1193,6 +1242,24 @@ packages:
         integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==,
       }
     engines: { node: '>=14' }
+
+  '@floating-ui/core@1.7.1':
+    resolution:
+      {
+        integrity: sha512-azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==,
+      }
+
+  '@floating-ui/dom@1.7.1':
+    resolution:
+      {
+        integrity: sha512-cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==,
+      }
+
+  '@floating-ui/utils@0.2.9':
+    resolution:
+      {
+        integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==,
+      }
 
   '@graphql-codegen/add@5.0.3':
     resolution:
@@ -1863,12 +1930,27 @@ packages:
       }
     engines: { node: '>= 8' }
 
+  '@oddbird/popover-polyfill@0.4.3':
+    resolution:
+      {
+        integrity: sha512-kBS0ZAwH8kZqFl0mV89KPK4cLYl2ZoKSfYngK4dz1eLAhKzTK0yu4LrvLdMeM7JhjWK6GxBtiY+cl1s6vR2pUg==,
+      }
+
   '@pkgjs/parseargs@0.11.0':
     resolution:
       {
         integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==,
       }
     engines: { node: '>=14' }
+
+  '@qwik-ui/headless@0.6.8':
+    resolution:
+      {
+        integrity: sha512-D/segTI7ZHEr518ODGM2d2vJsG5m7hrZpn7d6mDBzBQJzIQpZY432a/9Mba2frCidHPhzOEQoEOC89VAp+T3Fg==,
+      }
+    engines: { node: '>=16.0.0' }
+    peerDependencies:
+      '@builder.io/qwik': '>=1.3.1'
 
   '@qwik.dev/core@2.0.0-alpha.10':
     resolution:
@@ -1895,6 +1977,15 @@ packages:
     engines: { node: ^18.17.0 || ^20.3.0 || >=21.0.0 }
     peerDependencies:
       vite: '>=5 <7'
+
+  '@qwikest/icons@0.0.13':
+    resolution:
+      {
+        integrity: sha512-e0wY8vmx0nDSUiuCATlk+ojTvdBV4txIGHHWjZW5SRkv4XB8H9+3WSDcLPz0ItUdRyzcrohE9k2jtQI/98aRPA==,
+      }
+    engines: { node: '>=15.0.0' }
+    peerDependencies:
+      '@builder.io/qwik': '>=1.0.0'
 
   '@repeaterjs/repeater@3.0.6':
     resolution:
@@ -2252,6 +2343,12 @@ packages:
     resolution:
       {
         integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==,
+      }
+
+  '@types/aos@3.0.7':
+    resolution:
+      {
+        integrity: sha512-sEhyFqvKauUJZDbvAB3Pggynrq6g+2PS4XB3tmUr+mDL1gfDJnwslUC4QQ7/l8UD+LWpr3RxZVR/rHoZrLqZVg==,
       }
 
   '@types/applepayjs@14.0.9':
@@ -2664,6 +2761,12 @@ packages:
       }
     engines: { node: '>= 8' }
 
+  aos@2.3.4:
+    resolution:
+      {
+        integrity: sha512-zh/ahtR2yME4I51z8IttIt4lC1Nw0ktsFtmeDzID1m9naJnWXhCoARaCgNOGXb5CLy3zm+wqmRAEgMYB5E2HUw==,
+      }
+
   arg@5.0.2:
     resolution:
       {
@@ -2812,6 +2915,12 @@ packages:
         integrity: sha512-F1+K8EbfOZE49dtoPtmxUQrpXaBIl3ICvasLh+nJta0xkz+9kF/7uet9fLnwKqhDrmj6g+6K3Tw9yQPUg2ka5g==,
       }
 
+  body-scroll-lock-upgrade@1.1.0:
+    resolution:
+      {
+        integrity: sha512-nnfVAS+tB7CS9RaksuHVTpgHWHF7fE/ptIBJnwZrMqImIvWJF1OGcLnMpBhC6qhkx9oelvyxmWXwmIJXCV98Sw==,
+      }
+
   boolbase@1.0.0:
     resolution:
       {
@@ -2924,10 +3033,10 @@ packages:
       }
     engines: { node: '>=6' }
 
-  caniuse-lite@1.0.30001690:
+  caniuse-lite@1.0.30001722:
     resolution:
       {
-        integrity: sha512-5ExiE3qQN6oF8Clf8ifIDcMRCRE/dMGcETG/XGMD8/XiXm6HXQgQTh1yZYLXXpSOsEUlJm1Xr7kGULZTuGtP/w==,
+        integrity: sha512-DCQHBBZtiK6JVkAGw7drvAMK0Q0POD/xZvEmDp6baiMMP6QXXk9HpD6mNYBZWhOPG6LvIDb82ITqtWjhDckHCA==,
       }
 
   capital-case@1.0.4:
@@ -3015,6 +3124,12 @@ packages:
         integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==,
       }
     engines: { node: '>= 8.10.0' }
+
+  classlist-polyfill@1.2.0:
+    resolution:
+      {
+        integrity: sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ==,
+      }
 
   clean-stack@2.2.0:
     resolution:
@@ -3198,6 +3313,14 @@ packages:
       {
         integrity: sha512-CpNFuLxiPFxuZqhSKml3M+t0K/484pMAnfYWH14JoD7OZMnmC0Lmo+P7JX9SobqFpRoo7ifA18kOHdxJywYPEA==,
       }
+
+  cross-env@7.0.3:
+    resolution:
+      {
+        integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==,
+      }
+    engines: { node: '>=10.14', npm: '>=6', yarn: '>=1' }
+    hasBin: true
 
   cross-fetch@3.2.0:
     resolution:
@@ -3493,6 +3616,20 @@ packages:
     resolution:
       {
         integrity: sha512-CjVQyG7n7Sr+eBXE86HIulnL5N8xZY1sgmOPGuq/F0Rr0FJq63lg0kEtOIDfZBk44FnDLf6FUJ+dsJcuiUDdDQ==,
+      }
+
+  embla-carousel-autoplay@8.6.0:
+    resolution:
+      {
+        integrity: sha512-OBu5G3nwaSXkZCo1A6LTaFMZ8EpkYbwIaH+bPqdBnDGQ2fh4+NbzjXjs2SktoPNKCtflfVMc75njaDHOYXcrsA==,
+      }
+    peerDependencies:
+      embla-carousel: 8.6.0
+
+  embla-carousel@8.6.0:
+    resolution:
+      {
+        integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==,
       }
 
   emoji-regex@8.0.0:
@@ -3895,6 +4032,12 @@ packages:
         integrity: sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==,
       }
 
+  focus-trap@7.5.4:
+    resolution:
+      {
+        integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==,
+      }
+
   for-each@0.3.3:
     resolution:
       {
@@ -4127,6 +4270,12 @@ packages:
         integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==,
       }
     engines: { node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0 }
+
+  gsap@3.13.0:
+    resolution:
+      {
+        integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==,
+      }
 
   has-bigints@1.1.0:
     resolution:
@@ -4807,6 +4956,12 @@ packages:
       }
     engines: { node: '>=10' }
 
+  lodash.debounce@4.0.8:
+    resolution:
+      {
+        integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==,
+      }
+
   lodash.merge@4.6.2:
     resolution:
       {
@@ -4817,6 +4972,12 @@ packages:
     resolution:
       {
         integrity: sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==,
+      }
+
+  lodash.throttle@4.1.1:
+    resolution:
+      {
+        integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==,
       }
 
   lodash@4.17.21:
@@ -4874,6 +5035,25 @@ packages:
     resolution:
       {
         integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==,
+      }
+
+  lucide-qwik@1.0.0:
+    resolution:
+      {
+        integrity: sha512-AEcUfXOiXL4/MWf2kz/MPdjs2ydveetJ5szziFsb0kWhXQbJpXLg9xI9oOtuse0gxf0QiQswNhiAnm3Dv2PO6A==,
+      }
+    engines: { node: '>=15.0.0' }
+
+  lucide-static@0.511.0:
+    resolution:
+      {
+        integrity: sha512-/MWOjEyGZO84B16BeqbeleinbmeYxOBsbYDt/Yk6xGwMYwDm6dx43jKHMxGDqW9U84qWL13dNvVW0SMADhUSyg==,
+      }
+
+  lucide@0.513.0:
+    resolution:
+      {
+        integrity: sha512-c7gYh8As4tFHFk7j6xtog+1aLyKw0uDjT1wTXILVlRmmcOuArOv98LeWT1bWJqs/jqHXgRFbsmKmOMhsSAC2cg==,
       }
 
   magic-string@0.25.9:
@@ -6422,6 +6602,19 @@ packages:
         integrity: sha512-kc6S2YS/2yXbtkSMunBtKdah4VFETZ8Oh6ONSmSd9bRxhqTrtARUCBUiWXH3xVPpvR7tz2CSnkuXVE42EcGnMw==,
       }
 
+  swiper@11.2.8:
+    resolution:
+      {
+        integrity: sha512-S5FVf6zWynPWooi7pJ7lZhSUe2snTzqLuUzbd5h5PHUOhzgvW0bLKBd2wv0ixn6/5o9vwc/IkQT74CRcLJQzeg==,
+      }
+    engines: { node: '>= 4.7.0' }
+
+  tabbable@6.2.0:
+    resolution:
+      {
+        integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==,
+      }
+
   tailwindcss@3.4.1:
     resolution:
       {
@@ -7502,6 +7695,12 @@ snapshots:
 
   '@braintree/wrap-promise@2.1.0': {}
 
+  '@builder.io/qwik@1.14.1(vite@5.4.6(@types/node@20.11.17))':
+    dependencies:
+      csstype: 3.1.3
+      rollup: 4.41.0
+      vite: 5.4.6(@types/node@20.11.17)
+
   '@cloudflare/kv-asset-handler@0.2.0':
     dependencies:
       mime: 3.0.0
@@ -7704,6 +7903,17 @@ snapshots:
   '@eslint/js@8.57.0': {}
 
   '@fastify/busboy@2.1.1': {}
+
+  '@floating-ui/core@1.7.1':
+    dependencies:
+      '@floating-ui/utils': 0.2.9
+
+  '@floating-ui/dom@1.7.1':
+    dependencies:
+      '@floating-ui/core': 1.7.1
+      '@floating-ui/utils': 0.2.9
+
+  '@floating-ui/utils@0.2.9': {}
 
   '@graphql-codegen/add@5.0.3(graphql@16.10.0)':
     dependencies:
@@ -8344,7 +8554,7 @@ snapshots:
 
   '@mdx-js/mdx@3.1.0(acorn@8.14.0)':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
       '@types/mdx': 2.0.13
@@ -8384,8 +8594,19 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.18.0
 
+  '@oddbird/popover-polyfill@0.4.3': {}
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@qwik-ui/headless@0.6.8(@builder.io/qwik@1.14.1(vite@5.4.6(@types/node@20.11.17)))':
+    dependencies:
+      '@builder.io/qwik': 1.14.1(vite@5.4.6(@types/node@20.11.17))
+      '@floating-ui/core': 1.7.1
+      '@floating-ui/dom': 1.7.1
+      '@oddbird/popover-polyfill': 0.4.3
+      body-scroll-lock-upgrade: 1.1.0
+      focus-trap: 7.5.4
 
   '@qwik.dev/core@2.0.0-alpha.10(prettier@3.2.5)(vite@5.4.6(@types/node@20.11.17))':
     dependencies:
@@ -8413,11 +8634,15 @@ snapshots:
       - supports-color
       - typescript
 
+  '@qwikest/icons@0.0.13(@builder.io/qwik@1.14.1(vite@5.4.6(@types/node@20.11.17)))':
+    dependencies:
+      '@builder.io/qwik': 1.14.1(vite@5.4.6(@types/node@20.11.17))
+
   '@repeaterjs/repeater@3.0.6': {}
 
   '@rollup/pluginutils@5.1.4(rollup@4.41.0)':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-walker: 2.0.2
       picomatch: 4.0.2
     optionalDependencies:
@@ -8551,7 +8776,9 @@ snapshots:
 
   '@types/acorn@4.0.6':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
+
+  '@types/aos@3.0.7': {}
 
   '@types/applepayjs@14.0.9': {}
 
@@ -8599,7 +8826,7 @@ snapshots:
 
   '@types/estree-jsx@1.0.5':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   '@types/estree@1.0.6': {}
 
@@ -8842,6 +9069,12 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
+  aos@2.3.4:
+    dependencies:
+      classlist-polyfill: 1.2.0
+      lodash.debounce: 4.0.8
+      lodash.throttle: 4.1.1
+
   arg@5.0.2: {}
 
   argparse@2.0.1: {}
@@ -8894,7 +9127,7 @@ snapshots:
   autoprefixer@10.4.17(postcss@8.4.35):
     dependencies:
       browserslist: 4.24.3
-      caniuse-lite: 1.0.30001690
+      caniuse-lite: 1.0.30001722
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
@@ -8956,6 +9189,8 @@ snapshots:
 
   blake3-wasm@2.1.5: {}
 
+  body-scroll-lock-upgrade@1.1.0: {}
+
   boolbase@1.0.0: {}
 
   brace-expansion@1.1.11:
@@ -8999,7 +9234,7 @@ snapshots:
 
   browserslist@4.24.3:
     dependencies:
-      caniuse-lite: 1.0.30001690
+      caniuse-lite: 1.0.30001722
       electron-to-chromium: 1.5.76
       node-releases: 2.0.19
       update-browserslist-db: 1.1.1(browserslist@4.24.3)
@@ -9045,7 +9280,7 @@ snapshots:
 
   camelcase@5.3.1: {}
 
-  caniuse-lite@1.0.30001690: {}
+  caniuse-lite@1.0.30001722: {}
 
   capital-case@1.0.4:
     dependencies:
@@ -9133,6 +9368,8 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  classlist-polyfill@1.2.0: {}
 
   clean-stack@2.2.0: {}
 
@@ -9229,6 +9466,10 @@ snapshots:
   credit-card-type@10.0.1: {}
 
   credit-card-type@9.1.0: {}
+
+  cross-env@7.0.3:
+    dependencies:
+      cross-spawn: 7.0.6
 
   cross-fetch@3.2.0:
     dependencies:
@@ -9392,6 +9633,12 @@ snapshots:
   eastasianwidth@0.2.0: {}
 
   electron-to-chromium@1.5.76: {}
+
+  embla-carousel-autoplay@8.6.0(embla-carousel@8.6.0):
+    dependencies:
+      embla-carousel: 8.6.0
+
+  embla-carousel@8.6.0: {}
 
   emoji-regex@8.0.0: {}
 
@@ -9627,7 +9874,7 @@ snapshots:
 
   estree-util-attach-comments@3.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   estree-util-build-jsx@3.0.1:
     dependencies:
@@ -9640,7 +9887,7 @@ snapshots:
 
   estree-util-scope@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
 
   estree-util-to-js@2.0.0:
@@ -9660,7 +9907,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   esutils@2.0.3: {}
 
@@ -9764,6 +10011,10 @@ snapshots:
       rimraf: 3.0.2
 
   flatted@3.3.2: {}
+
+  focus-trap@7.5.4:
+    dependencies:
+      tabbable: 6.2.0
 
   for-each@0.3.3:
     dependencies:
@@ -9926,6 +10177,8 @@ snapshots:
 
   graphql@16.10.0: {}
 
+  gsap@3.13.0: {}
+
   has-bigints@1.1.0: {}
 
   has-flag@4.0.0: {}
@@ -9950,7 +10203,7 @@ snapshots:
 
   hast-util-to-estree@3.1.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
       comma-separated-tokens: 2.0.3
@@ -9971,7 +10224,7 @@ snapshots:
 
   hast-util-to-jsx-runtime@2.3.2:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/hast': 3.0.4
       '@types/unist': 3.0.3
       comma-separated-tokens: 2.0.3
@@ -10316,9 +10569,13 @@ snapshots:
     dependencies:
       p-locate: 5.0.0
 
+  lodash.debounce@4.0.8: {}
+
   lodash.merge@4.6.2: {}
 
   lodash.sortby@4.7.0: {}
+
+  lodash.throttle@4.1.1: {}
 
   lodash@4.17.21: {}
 
@@ -10353,6 +10610,12 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-qwik@1.0.0: {}
+
+  lucide-static@0.511.0: {}
+
+  lucide@0.513.0: {}
 
   magic-string@0.25.9:
     dependencies:
@@ -10496,7 +10759,7 @@ snapshots:
 
   micromark-extension-mdx-expression@3.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       micromark-factory-mdx-expression: 2.0.2
       micromark-factory-space: 2.0.1
@@ -10508,7 +10771,7 @@ snapshots:
   micromark-extension-mdx-jsx@3.0.1:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       estree-util-is-identifier-name: 3.0.0
       micromark-factory-mdx-expression: 2.0.2
@@ -10525,7 +10788,7 @@ snapshots:
 
   micromark-extension-mdxjs-esm@3.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.2
       micromark-util-character: 2.1.1
@@ -10561,7 +10824,7 @@ snapshots:
 
   micromark-factory-mdx-expression@2.0.2:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
@@ -10626,7 +10889,7 @@ snapshots:
   micromark-util-events-to-acorn@2.0.2:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/unist': 3.0.3
       devlop: 1.1.0
       estree-util-visit: 2.0.0
@@ -11034,7 +11297,7 @@ snapshots:
 
   recma-build-jsx@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-util-build-jsx: 3.0.1
       vfile: 6.0.2
 
@@ -11050,14 +11313,14 @@ snapshots:
 
   recma-parse@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       esast-util-from-js: 2.0.1
       unified: 11.0.5
       vfile: 6.0.2
 
   recma-stringify@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-util-to-js: 2.0.0
       unified: 11.0.5
       vfile: 6.0.2
@@ -11086,7 +11349,7 @@ snapshots:
 
   rehype-recma@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/hast': 3.0.4
       hast-util-to-estree: 3.1.0
     transitivePeerDependencies:
@@ -11508,6 +11771,10 @@ snapshots:
   swap-case@2.0.2:
     dependencies:
       tslib: 2.8.1
+
+  swiper@11.2.8: {}
+
+  tabbable@6.2.0: {}
 
   tailwindcss@3.4.1:
     dependencies:

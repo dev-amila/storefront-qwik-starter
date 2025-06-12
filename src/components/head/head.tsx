@@ -33,7 +33,7 @@ export const Head = component$(() => {
 				<style key={key} {...props} dangerouslySetInnerHTML={style} />
 			))}
 
-			<meta name="description" content="Vendure Qwik Storefront" />
+			<meta name="" content="Click2Buy" />
 		</head>
 	);
 });

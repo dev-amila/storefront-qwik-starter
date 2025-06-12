@@ -9,9 +9,8 @@ export const HEADER_AUTH_TOKEN_KEY = 'vendure-auth-token';
 export const IMAGE_RESOLUTIONS = [1000, 800, 600, 400];
 export const HOMEPAGE_IMAGE = '/homepage.webp';
 export const DEFAULT_METADATA_URL = 'https://qwik-storefront.vendure.io/';
-export const DEFAULT_METADATA_TITLE = 'Vendure Qwik Storefront';
-export const DEFAULT_METADATA_DESCRIPTION =
-	'A headless commerce storefront starter kit built with Vendure & Qwik';
+export const DEFAULT_METADATA_TITLE = 'Click2Buy.lk - Online Shopping in Sri Lanka';
+export const DEFAULT_METADATA_DESCRIPTION = 'A storefornt for Click2Buy.lk';
 export const DEFAULT_METADATA_IMAGE = 'https://qwik-storefront.vendure.io/social-image.png';
 export const DEFAULT_LOCALE = 'en';
 export const DEV_API = ENV_VARIABLES.VITE_VENDURE_DEV_URL;
