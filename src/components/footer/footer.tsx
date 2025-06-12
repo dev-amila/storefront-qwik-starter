@@ -365,15 +365,15 @@ export default component$(() => {
 							<h3 class="font-semibold text-lg mb-4">Help</h3>
 							<ul class="space-y-2 text-sm">
 								<li>
-									<a href="#" class="text-gray-700 hover:text-purple-800">
-										Frequently Asked Questions
+									<a href="/faq" class="text-gray-700 hover:text-purple-800">
+										FAQs
 									</a>
 								</li>
-								<li>
+								{/* <li>
 									<a href="#" class="text-gray-700 hover:text-purple-800">
 										How To Buy
 									</a>
-								</li>
+								</li> */}
 								<li>
 									<a href="#" class="text-gray-700 hover:text-purple-800">
 										Shipping & Delivery
@@ -402,8 +402,18 @@ export default component$(() => {
 									</a>
 								</li>
 								<li>
-									<a href="/policy/return-and-refund" class="text-gray-700 hover:text-purple-800">
-										Return and Refund Policy
+									<a href="/policy/replacement" class="text-gray-700 hover:text-purple-800">
+										Replacement Policy
+									</a>
+								</li>
+								<li>
+									<a href="/policy/refund" class="text-gray-700 hover:text-purple-800">
+										Refund Policy
+									</a>
+								</li>
+								<li>
+									<a href="/policy/return" class="text-gray-700 hover:text-purple-800">
+										Return Policy
 									</a>
 								</li>
 								<li>
